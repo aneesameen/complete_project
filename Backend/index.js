@@ -23,11 +23,12 @@ const app = express();
 app.use(cors({
     credentials: true,
     origin: [
-        BASE_URL,
+        "https://deploydemo-fe.vercel.app",
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 app.use(express.json());
 app.use(cookieParser());
