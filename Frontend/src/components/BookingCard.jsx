@@ -5,6 +5,7 @@ import { Navigate, useNavigate } from "react-router-dom"
 import { UserContext } from "../context/UserContext";
 import { toast } from "sonner";
 import { BASE_URL } from "../Constants";
+import LoadingScreen from "./LoadingScreen";
 
 
 function BookingCard({ singlePlace }) {
@@ -73,8 +74,8 @@ function BookingCard({ singlePlace }) {
                         });
 
                         if (verify.data.success) {
-                            navigate("/account/bookings/success");
                             toast.success("Booking successful!");
+                            navigate("/account/bookings/success");
                         } else {
                             toast.error("Payment verification failed!");
                         }
