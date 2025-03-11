@@ -22,9 +22,13 @@ const app = express();
 
 app.use(cors({
     credentials: true,
-    // origin: 'http://localhost:5173',
-    origin: BASE_URL,
+    origin: [
+        BASE_URL,
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + '/uploads'))
