@@ -21,10 +21,9 @@ const port = process.env.PORT || 4000;
 const app = express();
 
 app.use(cors({
-    origin: 'https://deploydemo-fe.vercel.app/',  // Frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,  // Use credentials (cookies, authorization headers, etc.)
+    credentials: true,
+    // origin: 'http://localhost:5173',
+    origin: BASE_URL,
 }));
 
 
