@@ -22,9 +22,13 @@ const app = express();
 
 app.use(cors({
     credentials: true,
-    // origin: 'http://localhost:5173',
-    origin: BASE_URL,
+    origin: [
+        process.env.BASE_URL
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 
 
 app.use(express.json());
@@ -137,7 +141,9 @@ app.post("/api/places", async (req, res) => {
     }
 });
 
-
+app.get("/", (req, res) => {
+    res.send("Server is running!");
+});
 
 
 
