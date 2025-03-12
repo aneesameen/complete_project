@@ -23,6 +23,7 @@ const app = express();
 app.use(cors({
     credentials: true,
     origin: [
+        'https://deploydemo-fe.vercel.app',
         process.env.BASE_URL
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
