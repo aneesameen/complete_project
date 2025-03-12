@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require('cors');
 const authRoute = require("./routes/auth.js");
-const uploadphoto = require("./routes/UploadByLink.js");
+// const uploadphoto = require("./routes/UploadByLink.js");
 const newplace = require("./routes/Place.js");
 const booking = require("./routes/Booking.js");
 const razorpay = require("./routes/Razorpay.js");
@@ -148,7 +148,7 @@ app.get("/", (req, res) => {
 
 
 app.use(authRoute);
-app.use(uploadphoto);
+// app.use(uploadphoto);
 app.use(newplace);
 app.use(booking);
 app.use(razorpay);
