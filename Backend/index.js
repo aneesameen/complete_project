@@ -4,6 +4,7 @@ const authRoute = require("./routes/auth.js");
 // const uploadphoto = require("./routes/UploadByLink.js");
 const newplace = require("./routes/Place.js");
 const booking = require("./routes/Booking.js");
+const comment = require("./routes/Comment.js");
 const razorpay = require("./routes/Razorpay.js");
 const { default: mongoose } = require("mongoose");
 const cookieParser = require("cookie-parser");
@@ -22,12 +23,8 @@ const app = express();
 
 app.use(cors({
     credentials: true,
-    origin: [
-        'https://deploydemo-fe.vercel.app',
-        process.env.BASE_URL
-    ],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    // origin: 'http://localhost:5173',
+    origin: BASE_URL,
 }));
 
 
@@ -152,6 +149,7 @@ app.use(authRoute);
 // app.use(uploadphoto);
 app.use(newplace);
 app.use(booking);
+app.use(comment);
 app.use(razorpay);
 
 

@@ -11,6 +11,7 @@ const crypto = require('crypto');
 
 
 // -----------------------------Booking a new place----------------------
+// ---------------------------------------not used for now---------------------
 
 router.post('/bookings', async (req, res) => {
     const { sessionId } = req.body;
